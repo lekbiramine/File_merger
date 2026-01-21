@@ -1,6 +1,10 @@
 from pathlib import Path
 import pandas as pd
 import logging
+import os
+from dotenv import load_dotenv
+import smtplib
+from email.message import EmailMessage
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -93,6 +97,7 @@ def main():
     logger.info(f"Raw rows: {len(merged_df)}")
 
     cleaned_df = clean_dataframe(merged_df)
+    cleaned_df = cleaned_df.sort_values("date")
     logger.info(f"Clean rows: {len(cleaned_df)}")
 
     summary = (
@@ -111,6 +116,41 @@ def main():
 
     except Exception as e:
         logger.critical(f"Failed to write Excel report: {e}")
-        
+
+def send_email():
+
+    load_dotenv()
+
+    EMAIL_ADDRESS = os.getenv('SENDER')
+    EMAIL_PASSWORD = os.getenv('PASSWORD')
+    RECIEVER_ADDRESS = os.getenv('RECIEVER')
+
+    msg = EmailMessage()
+    msg['Subject'] = 'Your Master File is Ready Mr.LEKBIR'
+    msg['From'] = EMAIL_ADDRESS
+    msg['To'] = RECIEVER_ADDRESS
+    msg.set_content('Sir, This is your excel file Cleaned , Organized , and Ready for analyst!')
+
+    file = OUTPUT_FILE
+    with open(file, "rb") as f:
+        file_data = f.read()
+        file_name = f.name
+    
+    msg.add_attachment(file_data,
+                        maintype='application',
+                        subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                        filename=file_name)
+    
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+        try:
+            smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            logger.info("Logged in...")
+
+            smtp.send_message(msg)
+            logger.info("Email has been sent!")
+        except Exception as e:
+            logger.error(f'Unable to sign in => {e}')
+
 if __name__ == '__main__':
     main()
+    send_email()
