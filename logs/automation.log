@@ -1,0 +1,55 @@
+(2026-01-21 17:14:52,093) | __main__ | INFO => 'Scanning input directory...'
+(2026-01-21 17:14:52,096) | __main__ | INFO => 'Loading april.csv'
+(2026-01-21 17:14:52,156) | __main__ | INFO => 'Raw rows:     Name Department  Amount        Date
+0  Henry      Sales    1000  2025-04-01
+1    Ivy         IT     870  2025-04-02
+2   Jack  Marketing     650  2025-04-03'
+(2026-01-21 17:14:52,192) | __main__ | INFO => 'Removed 0 duplicates rows'
+(2026-01-21 17:14:52,192) | __main__ | INFO => 'Clean rows: 3'
+(2026-01-21 17:14:52,840) | __main__ | INFO => 'Report generated: D:\File_Merger\output\master_report.xlsx'
+(2026-01-21 17:14:52,840) | __main__ | INFO => 'Loading feb.csv'
+(2026-01-21 17:14:52,862) | __main__ | INFO => 'Raw rows:     Name Department  Amount        Date    Name   Department    Amount         Date
+0  Henry      Sales  1000.0  2025-04-01      NaN          NaN       NaN         NaN
+1    Ivy         IT   870.0  2025-04-02      NaN          NaN       NaN         NaN
+2   Jack  Marketing   650.0  2025-04-03      NaN          NaN       NaN         NaN
+3    NaN        NaN     NaN         NaN  Charlie        Sales     900.0  2025-02-01
+4    NaN        NaN     NaN         NaN     Dana           IT       NaN  2025-02-02
+5    NaN        NaN     NaN         NaN      Eve    Marketing     700.0         NaN'
+(2026-01-21 17:14:52,871) | __main__ | INFO => 'Removed 2 duplicates rows'
+(2026-01-21 17:14:52,871) | __main__ | INFO => 'Clean rows: 4'
+(2026-01-21 17:14:52,889) | __main__ | INFO => 'Report generated: D:\File_Merger\output\master_report.xlsx'
+(2026-01-21 17:14:52,889) | __main__ | INFO => 'Loading jan.csv'
+(2026-01-21 17:14:52,905) | __main__ | INFO => 'Raw rows:     Name Department  Amount        Date    Name   Department    Amount         Date
+0  Henry      Sales  1000.0  2025-04-01      NaN          NaN       NaN         NaN
+1    Ivy         IT   870.0  2025-04-02      NaN          NaN       NaN         NaN
+2   Jack  Marketing   650.0  2025-04-03      NaN          NaN       NaN         NaN
+3    NaN        NaN     NaN         NaN  Charlie        Sales     900.0  2025-02-01
+4    NaN        NaN     NaN         NaN     Dana           IT       NaN  2025-02-02
+5    NaN        NaN     NaN         NaN      Eve    Marketing     700.0         NaN
+6  Alice      Sales  1200.0  2025-01-01      NaN          NaN       NaN         NaN
+7    Bob         IT   800.0  2025-01-02      NaN          NaN       NaN         NaN
+8    NaN  Marketing   500.0  2025-01-03      NaN          NaN       NaN         NaN
+9  Alice      Sales  1200.0  2025-01-01      NaN          NaN       NaN         NaN'
+(2026-01-21 17:14:52,910) | __main__ | INFO => 'Removed 3 duplicates rows'
+(2026-01-21 17:14:52,911) | __main__ | INFO => 'Clean rows: 7'
+(2026-01-21 17:14:52,932) | __main__ | INFO => 'Report generated: D:\File_Merger\output\master_report.xlsx'
+(2026-01-21 17:14:52,932) | __main__ | INFO => 'Loading march.xlsx'
+(2026-01-21 17:14:52,991) | __main__ | INFO => 'Raw rows:      Name Department  Amount  ...  Department   Amount         Date
+0   Henry      Sales  1000.0  ...          NaN      NaN         NaN
+1     Ivy         IT   870.0  ...          NaN      NaN         NaN
+2    Jack  Marketing   650.0  ...          NaN      NaN         NaN
+3     NaN        NaN     NaN  ...        Sales    900.0  2025-02-01
+4     NaN        NaN     NaN  ...           IT      NaN  2025-02-02
+5     NaN        NaN     NaN  ...    Marketing    700.0         NaN
+6   Alice      Sales  1200.0  ...          NaN      NaN         NaN
+7     Bob         IT   800.0  ...          NaN      NaN         NaN
+8     NaN  Marketing   500.0  ...          NaN      NaN         NaN
+9   Alice      Sales  1200.0  ...          NaN      NaN         NaN
+10  Frank      Sales  1100.0  ...          NaN      NaN         NaN
+11  Grace         IT   950.0  ...          NaN      NaN         NaN
+12  Frank      Sales  1100.0  ...          NaN      NaN         NaN
+
+[13 rows x 8 columns]'
+(2026-01-21 17:14:52,997) | __main__ | INFO => 'Removed 4 duplicates rows'
+(2026-01-21 17:14:52,997) | __main__ | INFO => 'Clean rows: 9'
+(2026-01-21 17:14:53,015) | __main__ | INFO => 'Report generated: D:\File_Merger\output\master_report.xlsx'
